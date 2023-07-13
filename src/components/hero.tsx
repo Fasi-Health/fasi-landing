@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import ScrollReveal from 'scrollreveal'
 
 import { NewsletterForm } from './newsletter-form'
+import axios from 'axios'
 
 type ScrollRevealRefElement =
   | HTMLHeadingElement
@@ -37,11 +38,14 @@ export function Hero({
   }, [])
 
   function onNewsletterSubmit(values: any) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({ values })
-      }, 1000)
-    })
+    return axios
+      .post(
+        'https://sheet.best/api/sheets/e4b79dcd-76dc-43b1-b1cf-22144dd12e04',
+        { email: values }
+      )
+      .then((response) => {
+        return response.status
+      })
   }
 
   return (
