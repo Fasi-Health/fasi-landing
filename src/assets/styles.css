@@ -1675,10 +1675,6 @@ select {
   border-color: rgb(165 180 252 / var(--tw-border-opacity));
 }
 @media (min-width: 370px) {
-  .sm\:my-3 {
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-  }
   @media not all and (min-width: 768px) {
     .sm\:max-md\:my-3 {
       margin-top: 0.75rem;
@@ -1687,12 +1683,6 @@ select {
     .sm\:max-md\:px-10 {
       padding-left: 2.5rem;
       padding-right: 2.5rem;
-    }
-  }
-  @media not all and (min-width: 370px) {
-    .sm\:max-sm\:my-3 {
-      margin-top: 0.75rem;
-      margin-bottom: 0.75rem;
     }
   }
 }
