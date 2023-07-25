@@ -13,11 +13,13 @@ export function NewsletterForm({
 }) {
   const [email, setEmail] = useState('')
   const [success, setSuccess] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const result = await onSubmit(email)
-    console.log(result)
+    setLoading(true)
+    await onSubmit(email)
+    setLoading(false)
     setEmail('')
     setSuccess(true)
   }
@@ -51,12 +53,21 @@ export function NewsletterForm({
             Email submitted successfully!
           </div>
         )}
+        {loading && (
+          <div className="mt-2 text-xs italic text-gray-500">
+            Submitting your email...
+          </div>
+        )}
       </div>
 
       <div className="control sm:max-md:my-3">
         <button
-          className="-mt-px inline-flex cursor-pointer justify-center whitespace-nowrap rounded-sm border-0 bg-gradient-to-r from-secondary-500 to-secondary-400 px-7 py-4 text-center font-medium leading-4 text-white no-underline shadow-lg "
+          className={classnames(
+            '-mt-px inline-flex cursor-pointer justify-center whitespace-nowrap rounded-sm border-0 bg-secondary px-7 py-4 text-center font-medium leading-4 text-white no-underline shadow-lg',
+            { '!bg-gray-300 !text-gray-400': loading }
+          )}
           type="submit"
+          disabled={loading}
         >
           {submitText}
         </button>
