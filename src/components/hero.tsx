@@ -61,7 +61,7 @@ export function Hero({
                 ref={(el: ScrollRevealRefElement) =>
                   scrollRevealRef.current.push(el)
                 }
-                className="mb-4 mt-0 text-4xl font-bold md:text-5xl"
+                className="mb-4 mt-0 text-4xl font-bold text-secondaryDark md:text-5xl"
               >
                 {title}
               </h1>
