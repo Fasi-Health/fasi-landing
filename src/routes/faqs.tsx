@@ -8,10 +8,10 @@ export default function FaqsPage() {
         <ArticleContent title="FAQ's">
           <p>Add your FAQ content here.</p>
           <details
-            className="mt-4 block rounded-sm border px-4 open:border-primary-400 hover:border-primary-300"
+            className="open:border-primary-400 hover:border-primary-300 mt-4 block rounded-sm border px-4"
             open
           >
-            <summary className="-mx-4 cursor-pointer border-primary-200 px-4 py-3">
+            <summary className="border-primary-200 -mx-4 cursor-pointer px-4 py-3">
               What is Holly?
             </summary>
             <p>
@@ -25,7 +25,7 @@ export default function FaqsPage() {
               use.
             </p>
           </details>
-          <details className="mt-4 block rounded-sm border border-gray-200 px-4 hover:border-primary-300">
+          <details className="hover:border-primary-300 mt-4 block rounded-sm border border-gray-200 px-4">
             <summary className="-mx-4 cursor-pointer px-4 py-3">
               How can I use Holly?
             </summary>
@@ -38,7 +38,7 @@ export default function FaqsPage() {
               redistribute it or sell it as a template.
             </p>
           </details>
-          <details className="mt-4 block rounded-sm border border-gray-200 px-4 hover:border-primary-300">
+          <details className="hover:border-primary-300 mt-4 block rounded-sm border border-gray-200 px-4">
             <summary className="-mx-4 cursor-pointer px-4 py-3">
               Can I contribute to Holly?
             </summary>
