@@ -10,7 +10,7 @@ export function Layout({ children }: PropsWithChildren) {
       <BackgroundGradient className="absolute bottom-0 left-1/2 top-0 ml-28 hidden w-1/2 lg:block" />
 
       <Header title="Fasi" />
-      <main className="flex flex-shrink-0 flex-grow items-center">
+      <main className="flex flex-shrink-0 flex-grow items-center sm:max-lg:justify-center">
         {children}
       </main>
       <Footer />

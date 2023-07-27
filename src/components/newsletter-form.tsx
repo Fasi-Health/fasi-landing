@@ -1,6 +1,6 @@
 import classnames from 'clsx'
 import type { ChangeEvent, FormEvent } from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export function NewsletterForm({
   className,
@@ -12,7 +12,7 @@ export function NewsletterForm({
   submitText?: string
 }) {
   const [email, setEmail] = useState('')
-  const [success, setSuccess] = useState(false)
+  const [success, setSuccess] = useState(true)
   const [loading, setLoading] = useState(false)
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -27,6 +27,15 @@ export function NewsletterForm({
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setEmail(event.target.value)
   }
+
+  useEffect(() => {
+    if (success) {
+      const timer = setTimeout(() => {
+        setSuccess(false)
+      }, 5000)
+      return () => clearTimeout(timer)
+    }
+  }, [success])
 
   return (
     <form
@@ -50,7 +59,7 @@ export function NewsletterForm({
         />
         {success && (
           <div className="mt-2 text-xs italic text-gray-500">
-            Email submitted successfully!
+            🎉 Email submitted successfully!
           </div>
         )}
         {loading && (
