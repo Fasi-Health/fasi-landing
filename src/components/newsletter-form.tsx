@@ -67,6 +67,11 @@ export function NewsletterForm({
             Submitting your email...
           </div>
         )}
+        {loading && (
+          <div className="mt-2 text-xs italic text-gray-500">
+            Submitting your email...
+          </div>
+        )}
       </div>
 
       <div className="control sm:max-md:my-3">
