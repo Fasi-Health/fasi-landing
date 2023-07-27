@@ -1330,6 +1330,10 @@ select {
   --tw-border-opacity: 1;
   border-color: rgb(203 213 225 / var(--tw-border-opacity));
 }
+.\!bg-gray-300 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity)) !important;
+}
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
@@ -1456,9 +1460,17 @@ select {
 .tracking-normal {
   letter-spacing: 0em;
 }
+.\!text-gray-400 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(148 163 184 / var(--tw-text-opacity)) !important;
+}
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+.text-secondaryDark {
+  --tw-text-opacity: 1;
+  color: rgb(0 27 45 / var(--tw-text-opacity));
 }
 .text-white {
   --tw-text-opacity: 1;
@@ -1706,9 +1718,6 @@ select {
   .md\:flex {
     display: flex;
   }
-  .md\:justify-center {
-    justify-content: center;
-  }
   .md\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
@@ -1716,6 +1725,11 @@ select {
   .md\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+  @media not all and (min-width: 1024px) {
+    .md\:max-lg\:justify-center {
+      justify-content: center;
+    }
   }
 }
 @media (min-width: 1024px) {
@@ -1748,6 +1762,12 @@ select {
   }
   .lg\:top-80 {
     top: 20rem;
+  }
+  .lg\:order-1 {
+    order: 1;
+  }
+  .lg\:mb-0 {
+    margin-bottom: 0px;
   }
   .lg\:block {
     display: block;

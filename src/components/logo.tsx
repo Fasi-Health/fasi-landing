@@ -10,7 +10,7 @@ export function Logo({ className }: { className?: string }) {
       y="0px"
       width="200"
       viewBox="0 0 1447 1021"
-      enable-background="new 0 0 1447 1021"
+      enableBackground="new 0 0 1447 1021"
       xmlSpace="preserve"
     >
       <path
