@@ -12,7 +12,7 @@ export function NewsletterForm({
   submitText?: string
 }) {
   const [email, setEmail] = useState('')
-  const [success, setSuccess] = useState(true)
+  const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
