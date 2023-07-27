@@ -79,7 +79,7 @@ export function Hero({
               ref={(el: ScrollRevealRefElement) =>
                 scrollRevealRef.current.push(el)
               }
-              className="md:flex md:justify-center"
+              className="md:flex md:max-lg:justify-center"
             >
               <NewsletterForm
                 className="m-0 mt-8 max-w-md md:flex"

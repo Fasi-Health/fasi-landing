@@ -1691,9 +1691,6 @@ select {
   .md\:flex {
     display: flex;
   }
-  .md\:justify-center {
-    justify-content: center;
-  }
   .md\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
@@ -1701,6 +1698,11 @@ select {
   .md\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+  @media not all and (min-width: 1024px) {
+    .md\:max-lg\:justify-center {
+      justify-content: center;
+    }
   }
 }
 @media (min-width: 1024px) {
