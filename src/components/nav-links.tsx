@@ -1,22 +1,36 @@
 import { NavLink } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+import classnames from 'clsx'
 
 const NAV_LINKS = [
-  { name: 'Contact Us', to: '/contact' },
+  { name: 'Home', to: '/' },
+  { name: 'Contact Us', to: '/contact-us' },
   // { name: 'About Us', to: '/about' },
   // { name: "FAQ's", to: '/faqs' },
   // { name: 'Support', to: '/support' },
 ]
 
 export function NavLinks({ className }: { className?: string }) {
+  let { pathname } = useLocation()
+
+  const isHome = pathname === '/'
+
   return (
     <ul className={className}>
       {NAV_LINKS.map((link) => (
-        <li key={link.name} className="ml-4">
+        <li key={link.name} className={classnames({ 'ml-4': !isHome })}>
           <NavLink
             to={link.to}
-            className={({ isActive }) =>
-              isActive ? 'border-b text-white' : 'text-white hover:border-b'
-            }
+            className={({ isActive }) => {
+              let className = 'text-white hover:border-b'
+              if (isActive) {
+                className = 'border-b border-secondary text-white'
+                if (isHome) {
+                  className = 'hidden '
+                }
+              }
+              return className
+            }}
           >
             {link.name}
           </NavLink>

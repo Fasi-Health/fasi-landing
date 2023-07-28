@@ -1,10 +1,15 @@
 import { Article, ArticleContent, ArticleMedia } from '@/components/article'
 import { Layout } from '@/components/layout'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import classnames from 'clsx'
 import axios from 'axios'
+import ScrollReveal from 'scrollreveal'
+
+type ScrollRevealRefElement = HTMLDivElement
 
 export default function ContactPage() {
+  const scrollRevealRef = useRef<ScrollRevealRefElement[]>([])
+
   const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
 
@@ -36,6 +41,22 @@ export default function ContactPage() {
       return () => clearTimeout(timer)
     }
   }, [success])
+
+  useEffect(() => {
+    if (scrollRevealRef.current.length > 0) {
+      scrollRevealRef.current.map((ref, index) =>
+        ScrollReveal().reveal(scrollRevealRef.current[index], {
+          duration: 2000,
+          distance: '40px',
+          easing: 'cubic-bezier(0.5, -0.01, 0, 1.005)',
+          origin: 'top',
+          interval: 150,
+        })
+      )
+    }
+
+    return () => ScrollReveal().destroy()
+  }, [])
 
   return (
     <Layout>
