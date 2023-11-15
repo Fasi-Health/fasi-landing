@@ -7,8 +7,6 @@ export default function CareerPage() {
             <Article>
             <p className="text-primary text-6xl align-text-top font-normal font-sans">WE'RE HIRING!</p>
             </Article>
-            
-           
         </Layout>
     )
 
