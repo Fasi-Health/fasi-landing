@@ -1,12 +1,12 @@
 import { Layout } from "@/components/layout";
-import { Article } from "@/components/article";
 
 export default function CareerPage() {
     return (
         <Layout>
-            <Article>
-            <p className="text-primary text-6xl align-text-top font-normal font-sans">WE'RE HIRING!</p>
-            </Article>
+            <div className="flex flex-col gap-10 pl-10">
+            <p className="text-primary text-6xl font-normal font-sans">WE'RE HIRING!</p>
+            <img src="assets/illustrators/career-page-illustrator.svg" alt="Career Page Illustrator" className=" w-96" />
+            </div>
         </Layout>
     )
 
