@@ -5,6 +5,7 @@ import classnames from 'clsx'
 const NAV_LINKS = [
   { name: 'Home', to: '/' },
   { name: 'Contact Us', to: '/contact-us' },
+  { name: 'Career', to: '/career' },
   // { name: 'About Us', to: '/about' },
   // { name: "FAQ's", to: '/faqs' },
   // { name: 'Support', to: '/support' },
