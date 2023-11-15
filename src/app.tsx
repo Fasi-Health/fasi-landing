@@ -1,5 +1,6 @@
 import ContactPage from '@/routes/contact'
 import HomePage from '@/routes/home'
+import CareerPage from '@/routes/career'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { ScrollToTop } from './components/scroll-to-top'
@@ -19,6 +20,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="contact-us" element={<ContactPage />} />
+          <Route path="career" element={<CareerPage />} />
 
           {/* <Route path="about" element={<AboutPage />} />
           <Route path="faqs" element={<FaqsPage />} />
